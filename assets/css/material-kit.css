@@ -1029,6 +1029,11 @@ pre code {
     margin-top: -1em;
 }
 
+.row-pub .card-title {
+    margin-bottom: 0.5em;
+}
+
+
 .no-gutters {
     margin-right: 0;
     margin-left: 0;
@@ -4596,7 +4601,8 @@ tbody.collapse.show {
 .card {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     min-width: 0;
     word-wrap: break-word;
     background-color: #fff;
@@ -11331,6 +11337,7 @@ fieldset[disabled] .form-check .form-check-input,
 .card .card-body a {
     /*color: #3c3cc1 !important;*/
     color: #4169E1 !important;
+    font-size: 0.8rem;
 }
 
 
@@ -14949,8 +14956,8 @@ h6,
 .h4,
 .h5,
 .h6 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 html * {
@@ -14978,7 +14985,7 @@ h3,
 
 h4,
 .h4 {
-    font-size: 1.125rem;
+    font-size: 1.0rem;
     line-height: 1.5em;
 }
 
@@ -14991,13 +14998,13 @@ h5,
 
 h6,
 .h6 {
-    font-size: 0.75rem;
+    font-size: 0.70rem;
     text-transform: uppercase;
     font-weight: 500;
 }
 
 p {
-    font-size: 14px;
+    font-size: 0.80rem;
     margin: 0 0 10px;
 }
 
@@ -17222,18 +17229,20 @@ footer .pull-center {
     color: #fff;
     margin-bottom: 50px;
     text-align: center;
+    width: 150%;
+    margin-left: -25%;
 }
 
 .index-page .brand h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 400;
     display: inline-block;
     position: relative;
 }
 
 .index-page .brand h3 {
-    font-size: 1.313rem;
-    max-width: 900px;
+    font-size: 1.2rem;
+    max-width: 1000px;
     margin: 10px auto 0;
 }
 
@@ -17330,8 +17339,9 @@ footer .pull-center {
 
 .profile-page .tab-content .collections .card .card-body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    /* flex-wrap: nowrap; */
 }
 
 .profile-page .tab-content .collections .card .card-body .badge {
@@ -17391,7 +17401,7 @@ footer .pull-center {
     [class*="navbar-expand-"]>.container,
     [class*="navbar-expand-"]>.container-fluid {
         padding-left: 15px;
-        padding-right: 15px;
+        padding-right: 30px;
     }
     .navbar .navbar-collapse .navbar-nav>li.button-container {
         padding: 15px;
