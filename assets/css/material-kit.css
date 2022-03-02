@@ -11340,6 +11340,12 @@ fieldset[disabled] .form-check .form-check-input,
     font-size: 0.8rem;
 }
 
+.card .card-body .card-title a {
+    /*color: #3c3cc1 !important;*/
+    color: #4169E1 !important;
+    font-size: 1rem;
+}
+
 
 .card .card-body+.card-footer {
     padding-top: 0rem;
