@@ -1,0 +1,158 @@
+%-----------------------Homework 01------------------------------------
+%-------------------Arman Shokrollahi---------------------------------
+%-------------------Modified by Jonghyun Choi------------------------
+
+\documentclass[a4 paper]{article}
+% Set target color model to RGB
+\usepackage[inner=1.5cm,outer=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage[rgb]{xcolor}
+\usepackage{verbatim}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,tikz,amssymb,tkz-linknodes}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true, urlcolor=blue,  linkcolor=blue, citecolor=blue]{hyperref}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{rotating}
+\usepackage{enumitem}
+%\usetikzlibrary{through,backgrounds}
+\hypersetup{%
+pdfauthor={Jonghyun Choi},%
+pdftitle={Homework},%
+pdfkeywords={Tikz,latex,bootstrap,uncertaintes},%
+pdfcreator={PDFLaTeX},%
+pdfproducer={PDFLaTeX},%
+}
+\usepackage[francais]{babel}
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+      \newtheorem{thm}{Theorem}[section]
+      \newtheorem{prop}[thm]{Proposition}
+      \newtheorem{lem}[thm]{Lemma}
+      \newtheorem{cor}[thm]{Corollary}
+      \newtheorem{defn}[thm]{Definition}
+      \newtheorem{rem}[thm]{Remark}
+      %\numberwithin{equation}{section}
+
+\newcommand{\homework}[5]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.50in { {\bf EC4213/ET5402/CT5303:~Machine learning and deep learning \hfill Fall 2018} }
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill #1 \hfill}}
+       \vspace{1mm}
+       \hbox to 6.28in { {\hfill (#2)  \hfill} }
+       \vspace{3mm}
+       \hbox to 6.28in { {\it Instructor: #3 \hfill Student name (ID\#): \hspace{8em}} }
+       %\hbox to 6.28in { {\it TA: #4  \hfill #6}}
+      \vspace{2mm}}
+   }
+   \end{center}
+   \markboth{#5 -- #1}{#5 -- #1}
+   \vspace*{4mm}
+}
+
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bepsilon}{\boldsymbol{\epsilon}}
+\newcommand{\balpha}{\boldsymbol{\alpha}}
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\newcommand{\0}{\mathbf{0}}
+\DeclareMathOperator*{\argmin}{argmin}  
+\DeclareMathOperator*{\argmax}{argmax}  
+
+\usepackage{titlesec}
+\titlespacing*{\section}
+{1.5em}{1.5em}{1em}
+\titlespacing*{\subsection}
+{1.5em}{1em}{1em}
+
+\renewcommand{\baselinestretch}{1.2}
+
+
+\begin{document}
+\homework{Homework 01}{due October 8, 2018}{Jonghyun Choi}{}{}
+
+Please specify your name and your student ID in the top heading. Hand in as a fully answered version to github classroom.
+
+%============================================================ 
+\section*{Problem 1: Maximum Likelihood Estimation (30 pt)}
+Maximum Likelihood Estimation (MLE) is a method of estimating the parameters of a statistical model given observations, by finding the parameters that maximize the likelihood of the observations. Concretely, given observations $y_1, y_2,..., y_n$ distributed according to $p_\theta (y_1, y_2,..., y_n)$ (here $p_\theta$ can be a probability mass function for discrete observations or a density for continuous observations), the likelihood function is defined as $L(\theta) = p_\theta (y_1, y_2,..., y_n)$ and the MLE is
+\begin{align*}
+    \hat{\theta}_{MLE} = \argmax_\theta L(\theta)
+\end{align*}
+
+We often make the assumption that the observations are independent and identically distributed or iid, in which case $p_\theta (y_1, y_2,..., y_n) = f_\theta (y_1)· f_\theta (y_2)····· f_\theta (y_n)$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item The instructor recommends maximizing the log-likelihood $\ell (\theta) = \log{L(\theta)}$ instead of maximizing $L(\theta)$. Why does this yield the same solution $\hat{\theta}_{MLE}$? 
+    
+    \item Why is it easier to solve the optimization problem for $\ell (\theta)$ in the iid case? 
+        
+    \item The Poisson distribution is $f_\lambda(y) = \frac{\lambda^y e^{-\lambda}}{y!}$. Let $Y_1,Y_2,...,Y_n$ be a set of independent and identically distributed random variables with Poisson distribution with parameter $\lambda$. Find the joint distribution of $Y_1,Y_2,...,Y_n.$ 
+    
+    \item Find the maximum likelihood estimator of $\lambda$ as a function of observations $y_1, y_2,..., y_n$.
+\end{enumerate}
+
+\section*{Problem 2: The accuracy of learning decision boundaries (40 pt)}
+
+This problem exercises your basic probability in the context of understanding why lots of training data helps to improve the accuracy of learning things.
+
+For each $\theta \in (\frac{1}{3},\frac{2}{3})$, define $f_\theta : [0,1] \rightarrow \{0,1\}$, such that
+\begin{align*}
+    f_\theta(x) =
+    \begin{cases}
+    1 & \text{if } x>\theta \\
+    0 & \text{otherwise.}
+    \end{cases}
+\end{align*}
+
+\textit{(Hint: draw the plot of $f_\theta (x)$ w.r.t. $x$ may help you to solve the problems.)}
+
+We draw samples $X_1,X_2,...,X_n$ uniformly at random and i.i.d. from the interval $[0,1]$. Our goal is to learn an estimate for $\theta$ from $n$ random samples $(X_1, f_\theta (X_1)),(X_2, f_\theta (X_2)),...,(X_n, f_\theta (X_n)).$ 
+
+\begin{itemize}
+    \item Let $T_{min} = \max (\{\frac{1}{3} \cup \{X_i | f_\theta(X_i) = 0 \}).$ We know that the true $\theta$ must be larger than $T_{min}.$
+
+    \item Let $T_{max} = \min(\{\frac{2}{3} \cup \{X_i | f_\theta(X_i) = 1. \}).$ We know that the true $\theta$ must be smaller than $T_{max}$.
+\end{itemize}
+
+The gap between $T_{min}$ and $T_{max}$ represents the uncertainty we will have about the true $\theta$ given the training data that we have received.
+
+\begin{enumerate}[label=(\alph*)]
+    \item What is the probability that $T_{max}$ - $\theta > \alpha$ as a function of $\alpha$? 
+    
+    \item What is the probability that $\theta$ - $T_{min} > \alpha$ as a function of $\alpha$?
+    
+    \item Suppose that you would like the estimator $\hat{\theta} = (T_{max} + T_{min})/2$ for $\theta$ that is $\alpha$-close (defined as $|\hat{\theta} - \theta| < \alpha$, where $\hat{\theta}$ is the estimation and $\theta$ is the true value) with probability at least $1 - \delta$. Both $\alpha$ and $\delta$ are some small positive numbers. Please bound or estimate how big of an $n$ do you need? (\textbf{Note}: You do not need to find the optimal lowest sample complexity $n$, an approximation using results of question (a) is fine.)
+\end{enumerate}
+
+
+\section*{Problem 3: Geometry of Ridge Regression (20 pt)}
+You recently learned ridge regression and how it differs from ordinary least squares. In this question we will explore how ridge regression is related to solving a constrained least squares problem in terms of their parameters and solutions.
+
+Recall that ridge regression is given by the unconstrained optimization problem 
+\begin{equation}
+    \min_{\mathbf{w}} \|\mathbf{y-Xw}\|^2_2 + \lambda \|\mathbf{w}\|^2_2.
+\label{eq:rr}
+\end{equation}
+    
+\begin{enumerate}[label=(\alph*)]
+    \item Derive that the solution to ridge regression~(\ref{eq:rr}) is given by $\mathbf{\hat{w_r}} = (\mathbf{X^\top X} + \lambda \mathbf{I})^{-1} \mathbf{X^\top y}$. 
+    
+    \item In the solution to the above problem, What happens when $\lambda \rightarrow \infty$? (Hint: It is for this reason that sometimes regularization is referred to as "shrinkage".)
+            
+\end{enumerate}
+
+\end{document}
+%%------------ Arman Shokrollahi--------------%%
+%%------------ Modified by Jonghyun Choi--------------%%

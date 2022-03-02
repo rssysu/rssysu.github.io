@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+    <!-- <link rel="apple-touch-icon" href="./assets/img/kit/free/apple-icon.png"> -->
+    <link rel="icon" href="../../assets/img/kit/free/gist.ico">
+    <title>
+        GIST Computer Vision Lab
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../assets/css/material-kit.css?v=2.0.2">
+    <!-- Documentation extras -->
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../../assets/assets-for-demo/demo.css" rel="stylesheet" />
+    <style type="text/css">
+    hr { 
+        margin: 0em;
+        border-width: 1px;
+    } 
+    </style>
+    <!-- iframe removal -->
+</head>
+
+<body class="index-page">
+    <nav class="navbar navbar-color-on-scroll navbar-transparent navbar-light fixed-top navbar-expand-lg " color-on-scroll="0" id="sectionsNav">
+        <div w3-include-html="../../header_courses.html" class="container"></div>
+    </nav>
+
+    <div class="page-header2 header-filter clear-filter" data-parallax="true" style="background-image: url('../../assets/img/gist3.jpg'); background-position: top;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main main-raised">
+        <div class="container">
+            <div class="title">
+                <h3 class="title">
+                    Visual Recognition and Reasoning (AI6101 / EC6401)<br>
+                </h3>
+                <h4 class="title" style="margin-top:-8px; margin-bottom: 20px;">
+                    Spring 2020<br>
+                </h4>
+                <h5>
+                    <b>Schedule</b>: Mon/Wed 1:00pm-2:15pm<br>
+                    <b>Location</b>: Online (<a href="https://zoom.us/meeting/register/upYsd-qupzsrE18zBEmUoV9mEmNBS_skBA" target="_new" style="color: #3971cc;">zoom.us</a>) <br>
+                    <b>Web forum</b>: <b><a href="https://piazza.com/gist/spring2020/ai6101ec6401" target="_new" style="color: #3971cc;">Piazza</a></b><br>
+                    <br>
+                    <b>Instructor:</b> Jonghyun Choi (jhc@gist)<br>
+                    <b>Office:</b> Dasan 509<br>
+                    <b>Office Hour:</b> Thur. 4pm-5pm / by appointment<br>
+                    <br>
+
+                    <b>TA:</b> Mohammad Mostafavi (mostafavi@gist)<br>
+                    <b>Office:</b> Dasan 504 <br>
+                    <b>Office hour:</b> Wed. 2:30pm-4pm / by appointment
+                </h5>
+            </div>
+
+            <h4>
+                <b>Jump to</b>: <a href="#ref">[Reference]</a> 
+                <a href="#sched">[Schedule]</a> 
+                <a href="https://piazza.com/gist/spring2020/ai6101ec6401" target="_blank">[Piazza]</a> 
+                <a href="https://piazza.com/gist/fall2019/ec4213et5402et5303/resources" target="_blank">[Homework]</a> 
+                <a href="https://www.gradescope.com/courses/121417/" target="_blank">[Gradescope]</a> 
+                <!-- <a href="#coding">[Coding Assignments]</a>  -->
+                <!-- <a href="#finalproj">[Final Project]</a>  -->
+                <a href="#policies">[Policies]</a>
+            </h4>
+
+            <h3 class="title"> Introduction </h3>
+            A graduate course in computer vision with emphasis on recognition and reasoning with and without large amounts of data (e.g., images, videos and associated tags, text, gps-locations etc) toward the ultimate goal of visual understanding. We will be reading an eclectic mix of classic and recent papers on topics including: Theories of Perception, Mid-level Vision (Grouping, Segmentation, Poselets), Object and Scene Recognition, Action Recognition, Contextual Reasoning, Joint Language and Vision Models, etc. We will be covering a wide range of supervised, semi-supervised and unsupervised approaches for each of the topics above.
+
+            <!---------------->
+            <h3 class="title" id="ref"> References</h3>
+            <ul>
+                <li> (RS) Computer vision: Algorithms and Applications (Richard Szeliski, 2010) <a href="http://szeliski.org/Book/">[Link]</a> </li>
+                <li> (GBC) Deep Learning (Ian Goodfellow, Yoshua Bengio, Aaron Courville, 2016) <a href="http://www.deeplearningbook.org/" target="_blank">[Link]</a></li>
+                <li> (CB) Pattern Recognition and Machine Learning, (Christopher Bishop, 2006) <a href="https://www.microsoft.com/en-us/research/people/cmbishop/#!prml-book">[Link]</a></li>
+                <li> (TM) Machine Learning, (Tom Mitchell, 1997) <a href="http://www.cs.cmu.edu/~tom/mlbook.html" target="_blank">[Link]</a></li> 
+            </ul>
+
+            <h4>
+                <font color="red"><b>[!] All slides (lecture slides, notes, tutorial), homework and solutions are found in Piazza's resource page <a href="https://piazza.com/gist/spring2020/ai6101ec6401/resources" target="_blank">[link]</a>.</b></font>
+            </h4>
+
+            <!---------------->
+            <h3 class="title" id="sched"> Schedule </h3>
+            
+                <table border=1 cellpadding=4 bgcolor=#c0e881>
+
+                    <tr bgcolor="#34c18d">
+                        <td style="width: 9%;"><b><font size=+1 color=#FFFFFF>Date</font></b></td>
+                        <td style="width: 20%;"><b><font size=+1 color=#FFFFFF>Topics</font></b></td>
+                        <td align=center style="width: 53%;"><b><font size=+1 color=#FFFFFF>Readings</font></b></td>
+                        <td align=center style="width: 15%;"><b><font size=+1 color=#FFFFFF>Presenter</font></b></td>
+                        <td align=center style="width: 3%;"><b><font size=+1 color=#FFFFFF>Rel./Due</font></b></td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>March 16</td>
+                        <td colspan="2">
+                            <!-- <font color="#999999" size="-2">[1]</font>  -->
+                            <b>Introduction to visual recognition and reasoning - Part I</b>
+                        </td>
+                        <!-- <td align=left style="font-size: smaller; line-height: 1.2em;"></td> -->
+                        <td align=center >Jonghyun</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>March 18</td>
+                        <td colspan="2">
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Introduction to visual recognition and reasoning - Part II</b>
+                        </td>
+                        <!-- <td align=left style="font-size: smaller; line-height: 1.2em;"></td> -->
+                        <td align=center>Jonghyun</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>March 23</td>
+                        <td colspan="2">
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Fundamentals of computer vision - Part I</b>
+                        </td>
+                        <!-- <td align=left style="font-size: smaller; line-height: 1.2em;"></td> -->
+                        <td align=center>Jonghyun</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>March 25</td>
+                        <td colspan="2">
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Fundamentals of computer vision - Part II</b>
+                        </td>
+                        <!-- <td align=left style="font-size: smaller; line-height: 1.2em;"></td> -->
+                        <td align=center>Jonghyun</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>March 30<br></td>
+                        <td colspan="2">
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Fundamentals of computer vision - Part II</b>
+                        </td>
+                        <!-- <td align=left style="font-size: smaller; line-height: 1.2em;"></td> -->
+                        <td align=center>Jonghyun</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>April 1</td>
+                        <td colspan="2">
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Data and visual recognition</b>
+                        </td>
+                        <!-- <td align=left style="font-size: smaller; line-height: 1.2em;"></td> -->
+                        <td align=center>Jonghyun</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>April 3<br><b style="font-size: smaller;">Make-up</b></td>
+                        <td colspan="2">
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Introduction to Deep Learning - Part I</b>
+                        </td>
+                        <!-- <td align=left style="font-size: smaller; line-height: 1.2em;"></td> -->
+                        <td align=center>Jonghyun</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>April 6</td>
+                        <td colspan="2">
+                            <b>Introduction to Deep Learning - Part II</b>
+                        </td>
+                        <!-- <td align=left style="font-size: smaller; line-height: 1.2em;"></td> -->
+                        <td align=center>Jonghyun</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>April 8<br></td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Supervised visual recognition using deep learning: Image classification</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Early work in deep CNN</b><br>
+                            <li>A. Krizhevsky, I. Sutskever, and G.E. Hinton. ImageNet Classification with Deep Convolutional Neural Networks. NIPS 2012</li>
+                            <li>K. Simonyan, A. Zisserman. Very Deep Convolutional Networks for Large-Scale Image Recognition. ICLR 2015</li>
+                            <b>Group 2 - New architectures in deep CNN</b><br>
+                            <li>He et al., Deep Residual Learning for Image Recognition, CVPR 2016</li>
+                            <li>Huang et al., Densely Connected Convolutional Networks, CVPR 2017</li>
+                            <b>Group 3 - SOTA architectures in deep CNN</b><br>
+                            <li>Tan and Le, EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks, ICML 2019</li>
+                            <li>Cubuk et al., AutoAugment: Learning Augmentation Strategies from Data, CVPR 2019</li>
+                        </td>
+                        <td align=center>
+                            Taeil Oh<br>
+                            Anwar Khan<br>
+                            YoonGuu Song<br>
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>April 13</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Supervised visual recognition: Understanding deep CNN</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Early approaches for visualizing filters</b><br>
+                            <li>A. Mahendran, A. Vedaldi. Understanding Deep Image Representations by Inverting Them. CVPR 2015</li>
+                            <li>M.D. Zeiler, R. Fergus. Visualizing and Understanding Convolutional Networks. ECCV 2014</li>
+                            <b>Group 2 - CAM family (visualization)</b><br>
+                            <li>B. Zhou et al., Learning Deep Features for Discriminative Localization, CVPR 2016</li>
+                            <li>Selvaraju et al., Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization, ICCV 2017</li>
+                            <b>Group 3 - Interpretable ML</b><br>
+                            <li>B. Kim et al., Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV), ICML 2018</li>
+                            <li>C. Olah et al., The Building Blocks of Interpretability (https://distill.pub/2018/building-blocks/), Distill 2018 (it's a new paradigm of publication - online interactive paper)</li>
+                        </td>
+                        <td align=center>
+                            Jin-Hwi Park<br>
+                            Matthew Webster<br>
+                            Hyoungsung Kim
+                        </td>
+                        <td align=center>HW1 Released</td>
+                    </tr>
+
+                    <tr bgcolor=#fcbda4 valign=center>
+                        <td>April 15</td>
+                        <td>
+                            <b>No Class: Election Day</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;"></td>
+                        <td align=center></td>
+                        <td align=center></td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>April 20</td>
+                        <td>
+                            <b>Object Detection</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - R-CNN Family</b><br>
+                            <li>Girshick, Ross et al., Region-based convolutional networks for accurate object detection and segmentation. TPAMI 2015</li>
+                            <li>Girshick, Ross., Fast r-cnn. ICCV. 2015.</li>
+                            <b>Group 2 - R-CNN Family continued</b><br>
+                            <li>S. Ren, K. He, R. Girshick, J. Sun, Faster R-CNN. NIPS 2015</li>
+                            <li>A. Shrivastava et al., Training region-based object detectors with online hard example mining. CVPR 2016</li>
+                            <b>Group 3 - Single shot (YOLO/SSD) Family</b><br>
+                            <li>W. Liu et al., SSD: Single Shot MultiBox Detector. ECCV 2016</li>
+                            <li>J. Redmon et al., You Only Look Once: Unified, Real-Time Object Detection. CVPR 2016</li>
+                            <li>J. Redmon et al., YOLO9000: Better, Faster, Stronger. CVPR 2017</li>
+                        </td>
+                        <td align=center>
+                            Inhwan Bae<br>
+                            Labina Shrestha<br>
+                            Yangkyu Kim
+                        </td>
+                        <td align=center>Final Proj. Grouping Begins</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>April 22</td>
+                        <td>
+                            <b>Contextual cues, Human-object interaction</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1- Contextual cues in image classification</b><br>
+                            <li>A. Torralba, Contextual Priming for Object Detection, IJCV 2003 </li>
+                                <ul>-> <a href="http://web.mit.edu/torralba/www/carsAndFacesInContext.html">http://web.mit.edu/torralba/www/carsAndFacesInContext.html</a></ul>
+                            <li style="margin-top: -1em;">A. Gupta et al., Observing Human-Object Interactions: Using Spatial and Functional Compatibility for Recognition, IEEE PAMI</li>
+                            <b>Group 2 - Contextual cues in segmentation</b><br>
+                            <li>R. Mottaghi et al., The Role of Context for Object Detection and Semantic Segmentation in the Wild, CVPR 2014</li>
+                            <li>R. Shetty et al., Not Using the Car to See the Sidewalk — Quantifying and Controlling the Effects of Context in Classification and Segmentation, CVPR 2019</li>
+                        </td>
+                        <td align=center>
+                            Dongmin Kang<br>
+                            YoonGuu Song<br>
+                        </td>
+                        <td align=center>HW1 Due<br>HW2 Rel.</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>April 27</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Image Segmentation</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Foundational method and a dataset for instance segmentation</b><br>
+                            <li>Long, Jonathan, Evan Shelhamer, and Trevor Darrell. Fully convolutional networks for semantic segmentation. CVPR 2015.</li>
+                            <li>Gupta, Agrim, Piotr Dollar, and Ross Girshick. LVIS: A dataset for large vocabulary instance segmentation. CVPR 2019.</li>
+                            <b>Group 2 - Recent methods</b><br>
+                            <li>He, Kaiming, et al. Mask r-cnn. ICCV 2017</li>
+                            <li>Chen, Xinlei, et al. Tensormask: A foundation for dense object segmentation. ICCV 2019.</li>
+                            
+                        </td>
+                        <td align=center>
+                            Inhwan Bae<br>
+                            Sang-Hun Han
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>April 29</td>
+                        <td>
+                            <b>Neural Architecture Search</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Search methods</b><br>
+                            <li>B. Zoph et al. Learning transferable architectures for scalable image recognition. CVPR 2018</li>
+                            <li>B. Zoph and Q. Le, Neural Architecture Search with Reinforcement Learning, ICLR 2017 (Oral)</li>
+
+                            <b>Group 2 - Differentiable NAS methods</b><br>
+                            <li>Liu et al., DARTS: Differentiable Architecture Search, ICLR 2019</li>
+                            <li>Chang et al., DATA: Differentiable ArchiTecture Approximation, NeurIPS 2019</li>
+
+                            <b>Group 3 - Computationally efficient NAS methods</b><br>
+                            <li>Chen et al., Progressive Differentiable Architecture Search: Bridging the Depth Gap between Search and Evaluation, ICCV 2019</li>
+                            <li>Xu et al., PC-DARTS: Partial Channel Connections for Memory-Efficient Architecture Search, ICLR 2020</li>
+                            <li>Zhou et al., EcoNAS: Finding Proxies for Economical Neural Architecture Search, CVPR 2020 (To appear)</li>
+                        </td>
+                        <td align=center>
+                            Junseok Kim<br>
+                            Hyunseo Koh<br>
+                            Dahyun Kim
+                        </td>
+                        <td align=center>HW2 Due (May 1, 12pm)<hr>Project Proposal Due</td>
+                    </tr>
+
+                    <tr bgcolor=#fcbda4 valign=center>
+                        <td>May 4</td>
+                        <td colspan="4">
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>No Class: School's Holiday</b>
+                        </td>
+                        <!-- <td align=left style="font-size: smaller; line-height: 1.2em;"></td>
+                        <td align=center>-</td>
+                        <td align=center>-</td> -->
+                    </tr>
+
+                    <!-- <tr bgcolor=#ffeb51 valign=center> -->
+                    <tr bgcolor=#fcbda4 valign=center>    
+                        <td>May 6</td>
+                        <td colspan="4">
+                            <b>No Class: Final project proposal revision.</b>
+                        </td>                        
+                        <!-- <td align=left style="font-size: smaller; line-height: 1.2em;"></td> -->
+                        <!-- <td align=center colspan="2">Take-Home Due.</td> -->
+                        <!-- <td align=center>Take-Home Due.</td> -->
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>May 11</td>
+                        <td>
+                            <b>2.5D Image Understanding</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Geometric context from a single image</b><br>
+                            <li>Hoiem, Derek, Alexei A. Efros, and Martial Hebert.,Geometric context from a single image., ICCV 2005.</li>
+                            <li>Eigen, David, and Rob Fergus.,Predicting depth, surface normals and semantic labels with a common multi-scale convolutional architecture., ICCV 2015.</li>
+                            <li>Chen, Weifeng, et al.,Single-image depth perception in the wild., NeurIPS 2016.</li>
+                            <b>Group 2 - Geometric context in images or video</b><br>
+                            <li>Zhou, Tinghui, et al.,Unsupervised learning of depth and ego-motion from video., CVPR 2017.""</li>
+                            <li>Kendall, Alex, et al.,End-to-end learning of geometry and context for deep stereo regression., ICCV 2017.</li>
+                            <b>Group 3 - Application of 2.5D representation</b><br>
+                            <li>Bangpeng Yao, Fei-Fei Li, "Action Recognition with Exemplar Based 2.5D Graph Matching", ECCV 2012</li>
+                            <li>Wu et al., "3D ShapeNets: A Deep Representation for Volumetric Shapes," CVPR 2015</li>
+                        </td>
+                        <td align=center>
+                            Junoh Lee<br>
+                            Sang-Hun Han<br>
+                            Deokyun Jang
+                        </td>
+                        <td align=center>HW3 Rel. (Tue May 12)</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>May 13</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>3D Image Understanding</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Learning representation of 3D point cloud</b><br>
+                            <li>Girdhar, Rohit, et al.,Learning a predictable and generative vector representation for objects., ECCV 2016.</li>
+                            <li>Gernot Riegler, Ali Osman Ulusoy, Andreas Geiger, "OctNet: Learning Deep 3D Representations at High Resolutions," CVPR 2017</li>
+
+                            <b>Group 2 - Learning representation of 3D point cloud by PointNet Family</b><br>
+                            <li>Qi, Charles R., et al.,Pointnet: Deep learning on point sets for 3d classification and segmentation., CVPR 2017.""</li>
+                            <li>Charles R. Qi, Li Yi, Hao Su, Leonidas J. Guibas, "PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space," NeurIPS 2017</li>
+
+                            <b>Group 3 - Learning 3D surface</b><br>
+                            <li>Gkioxari, Georgia, Jitendra Malik, and Justin Johnson.,Mesh r-cnn., ICCV 2019.</li>
+                            <li>Mescheder, Lars, et al.,Occupancy networks: Learning 3d reconstruction in function space., CVPR 2019.</li>
+                            <li>Kulkarni, Nilesh, Abhinav Gupta, and Shubham Tulsiani.,Canonical surface mapping via geometric cycle consistency., ICCV 2019.</li>
+                        </td>
+                        <td align=center>
+                            Yangkyu Kim<br>
+                            Dongmin Kang<br>
+                            Taeil Oh
+                        </td>
+                        <td align=center>Project Proposal Finalized</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>May 18</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Visual common sense reasoning</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Reasoning about size and abnormality</b><br>
+                            <li>Bagherinezhad et al., Are Elephants Bigger than Butterflies? Reasoning about Sizes of Objects, AAAI 2016</li>
+                            <li>Saleh et al., Toward a Taxonomy and Computational Models of Abnormalities in Images, AAAI 2016 (Student Best Paper)</li>
+
+                            <b>Group 2 - Visual semantic role lableing (ImSitu) and beyond</b><br>
+                            <li>Gupta and Malik, "Visual Semantic Role Labeling", arXiv 2015</li>
+                            <li>Yaskar et al., Situation Recognition: Visual Semantic Role Labeling for Image Understanding, CVPR 2016 Oral</li>
+                            <li>Yaskar et al., Stating the Obvious: Extracting Visual Common Sense Knowledge, NAACL 2016</li>
+                            
+                            <b>Group 3 - Visual common sense reasoning</b><br>
+                            <li>Zeller et al., From Recognition to Cognition: Visual Commonsense Reasoning, CVPR 2019 Oral"</li>
+                            <li>Fang et al., Video2Commonsense: Generating Commonsense Descriptions to Enrich Video Captioning, arXiv 2020</li>
+                        </td>
+                        <td align=center>
+                            Young-Jae Park<br>
+                            Jinwoo Nam<br>
+                            Jiwon Ahn
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+                    
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>May 20</td>
+                        <td>
+                            <b>Lifelong Learning</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Lifelong learning with web-supervision scale</b><br>
+                            <li>Chen, Xinlei, Abhinav Shrivastava, and Abhinav Gupta., "Neil: Extracting visual knowledge from web data," ICCV 2013.</li>
+                            <li>Santosh K. Divvala, Ali Farhadi, Carlos Guestrin, "Learning Everything about Anything: Webly-Supervised Visual Concept Learning," CVPR 2014</li>
+                            
+
+                            <!-- <b>Group 2 - Multi-task learning</b><br>
+                            <li>Misra, Ishan, et al., "Cross-stitch networks for multi-task learning.,"" CVPR 2016.</li>
+                            <li>Misra, Ishan, Abhinav Gupta, and Martial Hebert., "From red wine to red tomato: Composition with context.,"" CVPR 2017.</li> -->
+                            
+                            <b>Group 2 - Continual learning methods</b>
+                            <li>Li, Zhizhong, and Derek Hoiem.,Learning without forgetting., PAMI 2017</li>
+                            <li>Saihui Hou, Xinyu Pan, Chen Change Loy, Zilei Wang, Dahua Lin, "Lifelong Learning via Progressive Distillation and Retrospection," ECCV 2018</li>
+                            
+                            <b>Group 3 - SOTA Continual learning methods</b>
+                            <li>Dongmin Park, Seokil Hong, Bohyung Han, Kyoung Mu Lee, "Continual Learning by Asymmetric Loss Approximation With Single-Side Overestimation," ICCV 2019 </li>
+                            <li>Rahaf Aljundi, Klaas Kelchtermans, Tinne Tuytelaars, "Task-Free Continual Learning," CVPR 2019</li>
+
+                            <!-- <b>Group 3 - Applications of continual learning</b>
+                            <li>Mengyao Zhai, Lei Chen, Frederick Tung, Jiawei He, Megha Nawhal, Greg Mori, "Lifelong GAN: Continual Learning for Conditional Image Generation," ICCV 2019</li> -->
+                        </td>
+                        <td align=center>
+                            Yeonsik Jo<br>
+                            YoungHoon Jeon<br>
+                            Jun Suk Kim
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <!-- Make-up -->
+                    <tr bgcolor=#EEDDFF valign=center>
+                        <td>May 21<br><b style="font-size: smaller;">Make-up</b></td>
+                        <td>
+                            <b>Left-over topics</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group A - Learning representation of 3D point cloud</b><br>
+                            <li>Gernot Riegler, Ali Osman Ulusoy, Andreas Geiger, "OctNet: Learning Deep 3D Representations at High Resolutions," CVPR 2017</li>
+
+                            <b>Group B - Reasoning about size and abnormality</b><br>
+                            <li>Saleh et al., Toward a Taxonomy and Computational Models of Abnormalities in Images, AAAI 2016 (Student Best Paper)</li>
+
+                            <b>Group C - Continual learning methods</b>
+                            <li>Saihui Hou, Xinyu Pan, Chen Change Loy, Zilei Wang, Dahua Lin, "Lifelong Learning via Progressive Distillation and Retrospection," ECCV 2018</li>
+                            
+                            <b>Group D - SOTA Continual learning methods</b>
+                            <li>Rahaf Aljundi, Klaas Kelchtermans, Tinne Tuytelaars, "Task-Free Continual Learning," CVPR 2019</li>
+                        </td>
+                        <td align=center>
+                            Yangkyu Kim<br>
+                            Jiwon Ahn<br>
+                            YoungHoon Jeon<br>
+                            Jun Suk Kim
+                        </td>
+                        <td align=center>HW3 Due.<b style="font-size: smaller;">(Sun. May 24 11:59pm)</b></td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>May 25</td>
+                        <td>
+                            <b>Zero-shot/Few(low)-shot Learning</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 0 - Attribute based representation for zero-shot recognition</b> (Later)<br>
+                            <li>Farhadi et al., Describing Objects by their Attributes, CVPR 2009</li>
+                            <li>Lampert et al.,  Attribute-Based Classification for Zero-Shot Learning of Object Categories, IEEE TPAMI 2013</li>
+
+                            <b>Group 1 - Zero shot learning methods</b><br>
+                            <li>Purushwalkam, Senthil, et al.,Task-Driven Modular Networks for Zero-Shot Compositional Learning., ICCV 2019.</li>
+                            <li>Wang, Xiaolong, Yufei Ye, and Abhinav Gupta.,Zero-shot recognition via semantic embeddings and knowledge graphs., CVPR 2018</li>
+
+                            <b>Group 2 - Few(low)-shot learning methods I</b><br>
+                            <li>Oriol Vinyals, Charles Blundell, Timothy Lillicrap, Koray Kavukcuoglu, Daan Wierstra, Matching Networks for One Shot Learning, NIPS 2016</li>
+                            <li>Jake Snell, Kevin Swersky, Richard S. Zemel, Prototypical networks for few-shot learning, NIPS 2017</li>
+                            <li>Tianshi Cao, Marc Law, Sanja Fidler, Theoretical analysis of the number of shots in few-shot learning, ICLR 2020</li>
+
+                            <b>Group 3 - Few(low)-shot learning methods II</b><br>
+                            <li>Gregory Koch, Richard Zemel, Ruslan Salakhutdinov, Siamese neural networks for one-shot image recognition, ICML 2015</li>
+                            <li>Hariharan and Girshick, Low-shot Visual Recognition by Shrinking and Hallucinating Features, ICCV 2017</li>
+                            <li>Wang, Yuxiong, et al.,Low-shot learning from imaginary data., CVPR 2018.</li>                            
+                        </td>
+                        <td align=center>
+                            Byeonghwi Kim<br>
+                            Jin-Hwi Park<br>
+                            Matthew Webster
+                        </td>
+                        <td align=center>HW4 Rel.</td>
+                    </tr>
+    
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>May 27</td>
+                        <td>
+                            <b>Self-supervised/Unsupervised Learning</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Self-supervised visual learning</b><br>
+                            <li>Alexander Kolesnikov, Xiaohua Zhai, Lucas Beyer, "Revisiting Self-Supervised Visual Representation Learning," CVPR 2019</li>
+                            <li>Misra, Ishan, and Laurens van der Maaten., "Self-supervised learning of pretext-invariant representations.," CVPR 2020</li>
+
+                            <b>Group 2 - Unsupervised visual learning</b><br>
+                            <li>S. Gidaris, P. Singh, and N. Komodakis, "Unsupervised representation learning by predicting image rotations," ICLR 2018</li>
+                            <li>Wu, Zhirong, et al., "Unsupervised feature learning via non-parametric instance discrimination," CVPR 2018.</li>
+
+                            <b>Group 3 - MoCo Family</b><br>
+                            <li>Oord, Aaron van den, Yazhe Li, and Oriol Vinyals., "Representation learning with contrastive predictive coding," arXiv 2018</li>
+                            <li>He, Kaiming, et al., "Momentum contrast for unsupervised visual representation learning," arXiv 2019</li>
+                            <li>Xinlei Chen and Haoqi Fan and Ross Girshick and Kaiming He, "Improved Baselines with Momentum Contrastive Learning," arXiv 2020 (MoCo v2)</li>
+                        </td>
+                        <td align=center>
+                            Hyunseo Koh<br>
+                            Dahyun Kim<br>
+                            Anwar Khan                         
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>June 1</td>
+                        <td>
+                            <b>Memorability and intention inference</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Memorability</b><br>
+                            <li>Khosla et al., Understanding and Predicting Image Memorability at a Large Scale, ICCV 2015</li>
+                            <li>Fajtl et al., AMNet: Memorability Estimation with Attention, CVPR 2018</li>
+                            <li>Perera et al., Is Image Memorability Prediction Solved?, CVPR Workshop 2019</li>
+
+                            <b>Group 2 - Intention inference</b><br>
+                            <li>Ping Wei, Yang Liu, Tianmin Shu, Nanning Zheng, and Song-Chun Zhu, "Where and Why Are They Looking? Jointly Inferring Human Attention and Intentions in Complex Tasks," CVPR 2018</li>
+                            <li>Zunino et al., Predicting Intentions from Motion: The Subject-Adversarial Adaptation Approach, IJCV 2020</li>
+                        </td>
+                        <td align=center>
+                            Yeonsik Jo<br>
+                            Jiwon Ahn                            
+                        </td>
+                        <td align=center>-</td>
+
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>June 3</td>
+                        <td>
+                            <b>Vision and Langugage</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Early work of vision and language</b><br>
+                            <li>Berg et al., Baby Talk: Understanding and Generating Image Descriptions, CVPR 2011</li>
+                            <li>Lu et al., "Neural Baby Talk," CVPR 2018</li>
+
+                            <b>Group 2 - Visual question answering</b><br>
+                            <li>Agrwal, A, et al., "VQA: Visual Question Answering," ICCV 2015.</li>
+                            <li>Das, Abhishek, "Visual Dialog," CVPR 2017.""</li>
+                            <li>Yang, Jianwei, et al., "Visual curiosity: Learning to ask questions to learn visual recognition," CoRL 2018.</li>
+
+                            <b>Group 3 - Joint representation learning</b><br>
+                            <li>Sun, Chen, et al., "VideoBERT: A joint model for video and language representation learning," ICCV 2019"</li>
+                            <li>Jiasen Lu, Dhruv Batra, Devi Parikh, Stefan Lee, "ViLBERT: Pretraining Task-Agnostic Visiolinguistic Representations for Vision-and-Language Tasks," NeurIPS 2019</li>
+                        </td>
+                        <td align=center>
+                            Daechul Ahn<br>
+                            Sangmin Woo<br>
+                            Jinwoo Nam
+                        </td>
+                        <td align=center>HW4 Due (June 5 11:59pm)<hr>HW5 Rel.</td>
+                    </tr>
+    
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>June 8</td>
+                        <td>
+                            <b>Video Prediction</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <!-- <b>Group 1 - In robotics</b><br>
+                            <li>Rhinehart, Nicholas, and Kris Kitani., "First-person activity forecasting from video with online inverse reinforcement learning," TPAMI 2018</li>
+                            <li>Finn, Chelsea, and Sergey Levine, "Deep visual foresight for planning robot motion," ICRA ,2017</li> -->
+
+                            <b>Group 1 - Early work</b><br>
+                            <li>Walker, Jacob, et al., "An uncertain future: Forecasting from static images using variational autoencoders," ECCV 2016</li>
+                            <li>Walker, Jacob, et al., "The pose knows: Video forecasting by generating pose futures.," ICCV 2017</li>
+
+                            <b>Group 2 - Recent work</b><br>
+                            <li>Wonmin Byeon, Qin Wang, Rupesh Kumar Srivastava, and Petros Koumoutsakos, "ContextVP: Fully Context-Aware Video Prediction," ECCV 2018</li>
+                            <li>Yufei Ye, Maneesh Singh, Abhinav Gupta, Shubham Tulsiani, "Compositional Video Prediction," ICCV 2019</li>
+                        </td>
+                        <td align=center>
+                            Daechul Ahn<br>
+                            YoungHoon Jeon
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>June 10</td>
+                        <td>
+                            <b>Action Recognition</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Early work</b><br>
+                            <li>D. Tran, L. Bourdev, R. Fergus, L. Torresani, M. Paluri, "Learning Spatiotemporal Features with 3D Convolutional Networks," ICCV 2015.</li>
+                            <li>X. Wang, A. Farhadi, A. Gupta, "Actions~Transformations," CVPR 2016.</li>
+
+                            <b>Group 2 - Two stream approach and its improvement with big data pretraining</b><br>
+                            <li>Simonyan, Karen, and Andrew Zisserman., "Two-stream convolutional networks for action recognition in videos," NeurIPS 2014</li>
+                            <li>Carreira, Joao, and Andrew Zisserman., "Quo vadis, action recognition? a new model and the kinetics dataset," CVPR 2017.</li>
+
+                            <b>Group 3 - Recent methods</b><br>
+                            <li>Tran, Du, et al., "Video classification with channel-separated convolutional networks," ICCV 2019.</li>
+                            <li>Feichtenhofer, Christoph, et al., "Slowfast networks for video recognition," ICCV 2019.</li>
+                            <li>Wu, Chao-Yuan, et al., "Long-term feature banks for detailed video understanding," CVPR 2019."</li>
+                        </td>
+                        <td align=center>
+                            Labina Shrestha<br>
+                            Young-Jae Park<br>
+                            Yeonguk Yoo
+                        </td>
+                        <td align=center>Final Proj. SOTA Report Due (11:59pm)</td>
+                    </tr>
+    
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>June 15</td>
+                        <td>
+                            <b>Generative Models</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Generative Adversarial Network (GAN)</b><br>
+                            <li>Goodfellow et al., "Generative Adversarial Nets," NeurIPS 2014</li>
+                            <li>Radford, Alec, et al., "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks," ICLR 2016</li>
+                            <li>Zhu, Jun-Yan, et al., "Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks," ICCV 2017</li>
+
+                            <b>Group 2 - Recent work in GAN</b><br>
+                            <li>Karras, Tero, et al., "A Style-Based Generator Architecture for Generative Adversarial Networks," CVPR 2019</li>
+                            <li>Brock, Andrew, et al., "Large Scale GAN Training for High Fidelity Natural Image Synthesis," ICLR 2018</li>
+                            <li>Ethan Fetaya, Joern-Henrik Jacobsen, Will Grathwohl, Richard Zemel, "Understanding the Limitations of Conditional Generative Models," ICLR 2020</li>
+
+                            <b>Group 3 - Non GAN generative models</b><br>
+                            <li>Van der Oord et al., "Pixel Recurrent Neural Networks," ICML 2016</li>
+                            <li>Van der Oord et al., "Conditional Image Generation with PixelCNN Decoders," NeurIPS 2016</li>
+                            <li>Tim Salimans, Andrej Karpathy, Xi Chen, Diederik P. Kingma, "PixelCNN++: A PixelCNN Implementation with Discretized Logistic Mixture Likelihood and Other Modifications," ICRL 2017</li>
+                        </td>
+                        <td align=center>
+                            Junoh Lee<br>
+                            Byeonghwi Kim<br>
+                            Deokyun Jang                            
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>June 17</td>
+                        <td>
+                            <b>Relational Reasoning</b>
+                        </td>
+                        <td align=left style="font-size: smaller; line-height: 1.2em;">
+                            <b>Group 1 - Relationship of images</b><br>
+                            <li>Fereshteh Sadeghi, Santosh K. Kumar Divvala, Ali Farhadi, "VisKE: Visual Knowledge Extraction and Question Answering by Visual Verification of Relation Phrases," CVPR 2015</li>
+                            <li>Nam Vo, Lu Jiang, Chen Sun, Kevin Murphy, Li-Jia Li, Li Fei-Fei, James Hays, "Composing Text and Image for Image Retrieval - an Empirical Odyssey," CVPR 2019</li>
+                            <li>Purushwalkam, Senthil, et al., "Task-Driven Modular Networks for Zero-Shot Compositional Learning," ICCV 2019.</li>
+
+                            <b>Group 2 - Relationship of objects</b><br>
+                            <li>Justin Johnson, Li Fei-Fei, Bharath Hariharan, C. Lawrence Zitnick, Laurens van der Maaten, Ross Girshick, "CLEVR: A Diagnostic Dataset for Compositional Language and Elementary Visual Reasoning," CVPR 2017</li>
+                            <li>Santoro et al., "A simple neural network module for relational reasoning," NeurIPS 2017</li>
+                            <li>Julia Peyre, Ivan Laptev, Cordelia Schmid, Josef Sivic, "Detecting Unseen Visual Relations Using Analogies," ICCV 2019</li>
+                            
+                            <b>Group 3 - Relationship of object and human</b><br>
+                            <li>Keizo Kato, Yin Li, Abhinav Gupta, "Compositional Learning for Human Object Interaction," ECCV 2018</li>
+                            <li>Bingjie Xu, Yongkang Wong, Junnan Li, Qi Zhao, Mohan S. Kankanhalli, "Learning to Detect Human-Object Interactions With Knowledge," CVPR 2019</li>
+                            <li>Bingjie Xu, Junnan Li, Yongkang Wong, Qi Zhao, Mohan S. Kankanhalli, "Interact as You Intend: Intention-Driven Human-Object Interaction Detection," IEEE Trans on Multimedia 2019</li>
+                        </td>
+                        <td align=center>
+                            Sangmin Woo<br>
+                            Yeonguk Yoo<br>
+                            Hyoungsung Kim                            
+                        </td>
+                        <td align=center>HW5 Due (June 19 11:59pm)<hr>Final Proj. Report Due (June 21)</td>
+                    </tr>
+
+                    <tr bgcolor=#ffeb51 valign=center>
+                        <td>June 22</td>
+                        <td colspan="4">
+                            <b>Final Presentation I</b>
+                        </td>
+                    </tr>
+
+                    <tr bgcolor=#ffeb51 valign=center>
+                        <td>June 24</td>
+                        <td colspan="4">
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Final Presentation II</b>
+                        </td>
+                    </tr>
+
+                </table>
+
+            <!---------------->
+            <h3 class="title" id="policies"> Course Policies </h3>
+
+            <b>Cheating</b>: Any assignment or exam that is handed in must be your own work. However, talking with one another to understand the material better is strongly encouraged. Recognizing the distinction between cheating and cooperation is very important. If you copy someone else's solution, you are cheating. If you let someone else copy your solution, you are cheating. If someone dictates a solution to you, you are cheating. Everything you hand in must be in your own words, and based on your own understanding of the solution. If someone helps you understand the problem during a high-level discussion, you are not cheating. We strongly encourage students to help one another understand the material presented in class, in the book, and general issues relevant to the assignments. When taking an exam, you must work independently. Any collaboration during an exam will be considered cheating. Any student who is caught cheating will be given an D in the course. Please don't take that chance - if you're having trouble understanding the material, please let us know and we will be more than happy to help.
+
+        </div>
+    </div>
+
+    <!--  End Modal -->
+    <div w3-include-html="../../footer.html"></div>
+
+    <!--   Core JS Files   -->
+    <script src="../../assets/js/core/jquery.min.js"></script>
+    <script src="../../assets/js/core/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap-material-design.js"></script>
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+    <script src="../../assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="../../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../../assets/js/plugins/nouislider.min.js"></script>
+    <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script src="../../assets/js/material-kit.js?v=2.0.2"></script>
+    <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
+    <script src="../../assets/assets-for-demo/js/material-kit-demo.js"></script>
+    <!-- including html -->
+    <script src="../../assets/js/include-html.js"></script>    
+    <script>
+        $(document).ready(function() {
+
+            //init DateTimePickers
+            materialKit.initFormExtendedDatetimepickers();
+
+            // Sliders Init
+            //materialKit.initSliders();
+
+            includeHTML();
+        });
+    </script>
+</body>
+
+</html>

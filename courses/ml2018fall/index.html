@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+    <!-- <link rel="apple-touch-icon" href="./assets/img/kit/free/apple-icon.png"> -->
+    <link rel="icon" href="../../assets/img/kit/free/gist.ico">
+    <title>
+        GIST Computer Vision Lab
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../assets/css/material-kit.css?v=2.0.2">
+    <!-- Documentation extras -->
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../../assets/assets-for-demo/demo.css" rel="stylesheet" />
+    <!-- iframe removal -->
+</head>
+
+<body class="index-page">
+    <nav class="navbar navbar-color-on-scroll navbar-transparent navbar-light fixed-top navbar-expand-lg " color-on-scroll="0" id="sectionsNav">
+        <div w3-include-html="../../header_courses.html" class="container"></div>
+    </nav>
+
+    <div class="page-header2 header-filter clear-filter" data-parallax="true" style="background-image: url('../../assets/img/gist3.jpg'); background-position: top;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main main-raised">
+        <div class="container">
+            <div class="title">
+                <h3 class="title">
+                    Machine Learning and Deep Learning (EC4213 / ET5402 / CT5303)<br>
+                    Fall 2018<br>
+                </h3>
+                <h5>
+                    Schedule: Mon/Wed 10:30am-12:00pm<br>
+                    Location: GIST College Bldg-A 115 <br>
+                    <br>
+                    Instructor: Jonghyun Choi (jhc@gist)<br>
+                    Office Hours: Dasan 509; Wed 2pm-3pm or by appointment<br>
+                    Web forum: <a href="https://piazza.com/class/jltd0g1sinl63a" target="_new">Piazza</a><br>
+                    <br>
+
+                    TAs:<br>
+                    Dongmin Kang (skydmk21@gist)<br>
+                    Office hour: Dasan 504; Thu 2pm-3pm<br>
+                    <br>
+                    Eutteum Baik (eutteum@gist)<br>
+                    Office: EECS Bldg. C-412<br>
+                    Office hour: Appointment based<br>
+                    <br>
+                    Naveed Ilyas (naveedilyas@gist)<br>
+                    Office: EECS Bldg. C-419<br>
+                    Office hour: Appointment based<br>
+                </h5>
+            </div>
+
+            <h4>
+                <b>Jump to</b>: <a href="#textbook">[Textbook]</a> <a href="#sched">[Schedule]</a> <a href="https://piazza.com/class/jltd0g1sinl63a">[Piazza]</a> <a href="#homework">[Homework]</a> <a href="#coding">[Coding Assignments]</a> <a href="#finalproj">[Final Project]</a> <a href="#policies">[Policies]</a>
+            </h4>
+
+            <h3 class="title"> Introduction </h3>
+            This class will showcase various paradigms and methods in machine learning, its applications and its recent instance of deep neural networks also known as deep learning. The paradigms include supervised learning, unsupervised learning, semi-supervised learning, active learning and etc. The class will help you to understand and apply the machine learning algorithms to various applications such as computer vision and natural language processing.
+
+            <!---------------->
+            <h3 class="title" id="textbook"> Textbooks and references</h3>
+            <ul>
+                <li> <b>(Textbook)</b> (CB) Pattern Recognition and Machine Learning, (Christopher Bishop, 2006) <a href="https://www.microsoft.com/en-us/research/people/cmbishop/#!prml-book">[Link]</a></li>
+                <li> (TM) Machine Learning, (Tom Mitchell, 1997) <a href="http://www.cs.cmu.edu/~tom/mlbook.html" target="_blank">[Link]</a></li> 
+                <li> (GBC) Deep Learning (Ian Goodfellow, Yoshua Bengio, Aaron Courville, 2016) <a href="http://www.deeplearningbook.org/" target="_blank">[Link]</a></li>
+                <li> (DHS) Pattern Classification 2nd Edition, (Richard O Duda, Peter E. Hart, David G. Stork, 2000) 
+                    <a href="https://www.amazon.com/Pattern-Classification-Pt-1-Richard-Duda/dp/0471056693" target="_blank">[Link]</a>
+                    <img border=0 width=45 src="../../assets/img/kit/new.jpg"></li>
+                <li> (GT) Mathematics for Machine Learning, (Garrett Thomas, 2018) <a href="http://gwthomas.github.io/docs/math4ml.pdf" target="_blank">[Link]</a> <img border=0 width=45 src="../../assets/img/kit/new.jpg"></li>
+                <li> (KM) Machine Learning: a probabilistic perspective, (Kevin Murphy, 2013) <a href="https://www.cs.ubc.ca/~murphyk/MLbook/index.html" target="_blank">[Link]</a> <img border=0 width=45 src="../../assets/img/kit/new.jpg"></li>                
+                <li> (SB) Reinforcement Learning, 2nd Edition, (Richard S. Sutton and Andrew G. Barto, 2018) <a href="https://mitpress.mit.edu/books/reinforcement-learning-second-edition" target="_blank">[Link]</a> <img border=0 width=45 src="../../assets/img/kit/new.jpg"></li>
+            </ul>
+
+
+            <!---------------->
+            <h3 class="title" id="sched"> Schedule </h3>
+            
+                <table border=1 cellpadding=4 bgcolor=#c0e881>
+
+                    <tr bgcolor="#34c18d">
+                        <td><b><font size=+1 color=#FFFFFF>Date</font></b></td>
+                        <td><b><font size=+1 color=#FFFFFF>Topics</font></b></td>
+                        <td align=center><b><font size=+1 color=#FFFFFF>Readings</font></b></td>
+                        <td align=center><b><font size=+1 color=#FFFFFF>Due</font></b></td>
+                        <td align=center><b><font size=+1 color=#FFFFFF>Slides</font></b></td>
+                        <td align=center><b><font size=+1 color=#FFFFFF>Tutorial</font></b></td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>03 Sep</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[1]</font>  -->
+                            <b>Introduction: what is machine learning?</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center><a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/1_introduction.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a></td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <!-- Title -->                        
+<!--                     <tr>
+                        <td colspan=5 bgcolor=#c18f33><center><i><font size=+1 color=#FFFFFF><b> Basic Supervised Learing </b></font></i></center></td>
+                    </tr>
+ -->                        
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td><s>05 Sep</s> 07 Sep</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Decision trees I</b>
+                        </td>
+                        <td align=center>TM Ch.3</td>
+                        <td align=center><a href="./hw/hw00.pdf" target="_new">HW00</a></td>
+                        <td align=center><a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/2_decision_trees.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a></td>
+                        <td align=center><a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/Tutorial1.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a></td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>10 Sep</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Decision trees II (inductive bias)</b>
+                        </td>
+                        <td align=center>TM Ch.3</td>
+                        <td align=center>-</td>
+                        <td align=center><a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/3_decision_trees_2.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a></td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td><s>12 Sep</s>14 Sep</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Geometric view of classification and nearest neighbor.</b>
+                        </td>
+                        <td align=center>CB Ch.2.5.2<br>DHS Ch.4.4-4.5</td>
+                        <td align=center>-</td>
+                        <td align=center><a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/4_geometry_classification.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a></td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>17 Sep</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>MLE/MAP. Linear regression I</b>
+                        </td>
+                        <td align=center>CB Ch.3.1,<br>DHS Ch.2.1-2.7,<br>2.9, 3.1-3.2</td>
+                        <td align=center>-</td>
+                        <td align=center><a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/5_mle_map_linear_regression_1.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a></td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>19 Sep</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Linear regression II (Bias-variance trade-off)</b>
+                        </td>
+                        <td align=center>CB Ch.3<br>DHS Ch.2</td>
+                        <td align=center>-</td>
+                        <td align=center><a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/6_linear_regression_2.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a></td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#fcbda4 valign=center>
+                        <td>24 Sep</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Korean Thanksgiving Day (Choo-seok)</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#fcbda4 valign=center>
+                        <td>26 Sep</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Korean Thanksgiving Day (Choo-seok)</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>01 Oct</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Naive Bayes Classifiers</b>
+                        </td>
+                        <td align=center>CB Ch.1.2.3<br>TM Ch.6.9-6.10</td>
+                        <td align=center>-</td>
+                        <td align=center><a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/7_naive_bayes.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a></td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#fcbda4 valign=center>
+                        <td>03 Oct</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>The National Foundation Day of Korea</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>08 Oct</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Logistic regression I</b>
+                        </td>
+                        <td align=center>KM Ch.8.1-8.3, 8.5.2</td>
+                        <td align=center><a href="https://classroom.github.com/a/8SorZgrl" target="_new">HW01</a></td>
+                        <td align=center><a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/8_logistic_regression_1.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a></td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>10 Oct</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Logistic regression II</b>
+                        </td>
+                        <td align=center>KM Ch.8.1-8.3, 8.5.2</td>
+                        <td align=center>-</td>
+                        <td align=center>
+                        <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/9_logistic_regression_2.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a></td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>15 Oct</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Perceptron</b>
+                        </td>
+                        <td align=center>CB Ch. 4.1.7<br>KM Ch. 8.5.4, 16.5<br>TM Ch. 4.4<br></td>
+                        <td align=center><a href="./codingassignment01.html" target="_new">Coding Assignment #1</a></td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/10_perceptron.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>17 Oct</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Support Vector Machines I</b>
+                        </td>
+                        <td align=center>CB Ch. 7.1<br>KM Ch. 14.5<br><a href="http://www.cs.northwestern.edu/~pardo/courses/eecs349/readings/support_vector_machines4.pdf" target="_new">An SVM tutorial</a></td>
+                        <td align=center>-</td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/11_svm_1.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>22 Oct</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Support Vector Machines II, Kernel Methods I</b>
+                        </td>
+                        <td align=center>CB Ch. 5.1-5.2, 6, 7.1,<br>KM Ch. 14.4, 14.5<br><a href="http://www.cs.northwestern.edu/~pardo/courses/eecs349/readings/support_vector_machines4.pdf" target="_new">An SVM tutorial</a><br></td>
+                        <td align=center>-</td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/12_svm_2_kernel.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>24 Oct</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Kernel Methods II, Neural Network I</b>
+                        </td>
+                        <td align=center>CB Ch.6, Ch.5<br>KM Ch.14, Ch.16.5</td>
+                        <td align=center><a href="https://classroom.github.com/a/ZfaksGut" target="_new">(26 Oct.) HW02</a></td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/13_kernel_2_neuralnet.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#fcbda4 valign=center>
+                        <td>29 Oct</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>No class for the Mid-term week</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#ffeb51 valign=center>
+                        <td>31 Oct</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Mid-term Exam</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>05 Nov</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Neural Network II</b>
+                        </td>
+                        <td align=center>CB Ch.5<br>TM Ch. 4.5-4.9<br>DHS Ch.6<br>GBC Ch.6</td>
+                        <td align=center>-</td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/14_neuralnet_2.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>07 Nov</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Convolutional Neural Network</b>
+                        </td>
+                        <td align=center>GBC Ch.9</td>
+                        <td align=center>-</td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/15_cnn.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>                            
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>12 Nov</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Ensemble. Learning Paradigms. Layers in deep neural networks</b>
+                        </td>
+                        <td align=center>GBC Ch.8, 20</td>
+                        <td align=center>-</td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/16_ensemble_paradigm_other_layers_in_deepnet.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>                            
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#a4f4c6 valign=center>
+                        <td>14 Nov</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Final Project Proposal Presentations I</b>
+                        </td>
+                        <td align=center>N/A</td>
+                        <td align=center>Final Project Proposal</td>
+                        <td align=center>N/A</td>
+                        <td align=center>-</td>                        
+                    </tr>
+
+                    <tr bgcolor=#a4f4c6 valign=center>
+                        <td>19 Nov</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Final Project Proposal Presentations II</b>
+                        </td>
+                        <td align=center>N/A</td>
+                        <td align=center><a href="https://classroom.github.com/a/QophnfRf">Coding Assignment #2</a></td>
+                        <td align=center>N/A</td>
+                        <td align=center>-</td>                        
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>21 Nov</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Recap. of Coding Assignment 2. Deep neural network architectures (auto-encoders) I</b>
+                        </td>
+                        <td align=center>GBC Ch.10</td>
+                        <td align=center>-</td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/17_auto_encoder.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>26 Nov</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Deep neural network architectures II (GAN), Training Deep Neural Network.</b>
+                        </td>
+                        <td align=center>KM Ch.16.4<br>GBC Ch.7</td>
+                        <td align=center>-</td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/18_gan_boosting_train_deepnet.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>28 Nov</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Details of Deep Neural Network I</b>
+                        </td>
+                        <td align=center>GBC Ch.6, 7</td>
+                        <td align=center>-</td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/19_deepnet_1.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>                            
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>03 Dec</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Details of Deep Neural Networks II</b>
+                        </td>
+                        <td align=center>GBC Ch.8</td>
+                        <td align=center>-</td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/20_deepnet2.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>05 Dec</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <!-- <b>Reinforcement learning: Markov Decision process, value/policy iteration, Q-learning. RL applications.</b> -->
+                            <b>Recurrent neural network (RNN) I, Principal component analysis (PCA), K-means clustering, Mixture of Gaussian, Expectation maximization (EM), Intro. to Boosting.</b>
+                        </td>
+                        <td align=center>CB Ch. 4.1, 9, 12.1<br>SB Ch.1, 3, 4 </td>
+                        <td align=center>Quiz</td>
+                        <td align=center>
+                            <a href="https://s3.ap-northeast-2.amazonaws.com/gistmldl2018fall/slides/21_rnn_pca_boosting.pdf" target="_blank"><img border=0 width=25 src="../../assets/img/kit/pdf.jpg"></a>
+                        </td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#fcbda4 valign=center>
+                        <td>10 Dec</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>No class for the final exam week.</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>12 Dec (Tentative)</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Final Project Exhibition</b>
+                        </td>
+                        <td align=center>N/A</td>
+                        <td align=center>Final Project - Final Report</td>
+                        <td align=center>N/A</td>
+                        <td align=center>-</td>
+                    </tr>
+                </table>
+
+
+            <!---------------->
+            <h3 class="title" id="homework"> Homework Assignments </h3>
+            <p>
+                <font color="red"><b>If the due date is on the class day, the deadline is before the class starts. Otherwise, specify.</b></font>
+            </p>
+            <ul>
+                <li><a href="./hw/hw00.pdf" target="_new">HW00</a>: Survey and basic math</li>
+                <li><a href="https://classroom.github.com/a/8SorZgrl" target="_new">HW01</a>: MLE, decision boundary, ridge regression. <a href="https://github.com/gistvision/ml2018fallhw01/raw/master/ml_hw01_sol.pdf" target="_new4"><b>[HW01 Solution]</b></a> </li>
+                <ul>
+                    <li><a href="https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-1" target="_new">LaTeX Tutorial 1</a></li>
+                    <li><a href="https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-2" target="_new">LaTeX Tutorial 2</a></li>
+                    <li><a href="https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-3" target="_new">LaTeX Tutorial 3</a></li>
+                    <li>Claim information</li>
+                    <ul>
+                        <li>Problem 1,3 -> <a href="mailto:eutteum@gist.ac.kr">TA Euttem Paik (EECS Bldg. C-412)</a></li>
+                        <li>Problem 2 -> <a href="mailto:naveedilyas@gist.ac.kr">TA Naveed Ilyas (EECS Bldg. C-419)</a></li>
+                    </ul>
+                </ul>
+
+                <li><a href="https://classroom.github.com/a/ZfaksGut" target="_new">HW02</a>: Gaussian Naive Bayesian classifier, logistic regression, SVM 
+                    <a href="https://github.com/gistvision/ml2018fallhw02/blob/master/hw02_sol.pdf" target="_new4"><b>[HW02 Solution]</b></a>
+                </li>
+                <ul>
+                    <li>Claim information</li>
+                    <ul>
+                        <li>Problem 1 -> <a href="mailto:naveedilyas@gist.ac.kr">TA Naveed Ilyas (EECS Bldg. C-419)</a></li>
+                        <li>Problem 2,3 -> <a href="mailto:eutteum@gist.ac.kr">TA Euttem Paik (EECS Bldg. C-412)</a></li>
+                    </ul>
+                </ul>
+                <li>HW03</li>
+            </ul>
+
+
+            <!---------------->
+            <h3 class="title" id="coding"> Coding Assignments </h3>
+            <!-- Submission site: <a href="https://classroom.github.com/a/trPtpZE3" target="_new">Github classroom - Test assignment</a> -->
+            <ul>
+                <li><a href="./codingassignment01.html" target="_new">Coding Assignment #1</a>: <a href="https://classroom.github.com/a/bZWn2mEf" target="_new">Submission Github Repo</a></li>
+                <li>Coding Assignment #2</li>
+                    <ul>
+                        <li><a href="https://classroom.github.com/a/QophnfRf" target="_new2">Submission Github Repo</a></li>
+                        <ul>
+                            <li><b>Note</b>: Make sure to upload a write-up PDF explaining your approach</li>
+                        </ul>
+                        <li><a href="https://www.kaggle.com/t/58f1a32916fe4d23becaa75df4761939" target="_new3">Kaggle Competition page!</a></li>
+                    </ul>
+
+            </ul>
+
+
+            <!---------------->
+            <h3 class="title" id="finalproj"> Final Project </h3>
+            <ul>
+                <!-- <li><a href="https://goo.gl/forms/J6nyPSNGOIDMiNNJ2" target="_new2">Team configuration (Google form)</a></li> -->
+                <li>Team configuration (Google form) - Closed</li> 
+                <li><a href="https://classroom.github.com/g/W9kCDLKM" target="_new2">Submission Repo <img border=0 width=45 src="../../assets/img/kit/new.jpg"></a></li>
+                <ul>
+                    <li>Proposal: Due on Nov. 14</li>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=KS9GvK7cvmo" target="_new3">LaTeX tutorial - BibTeX</a></li>
+                    </ul>
+                </ul>
+            </ul>
+
+
+            <!---------------->
+            <h3 class="title" id="policies"> Course Policies </h3>
+
+            <b>Cheating</b>: Any assignment or exam that is handed in must be your own work. However, talking with one another to understand the material better is strongly encouraged. Recognizing the distinction between cheating and cooperation is very important. If you copy someone else's solution, you are cheating. If you let someone else copy your solution, you are cheating. If someone dictates a solution to you, you are cheating. Everything you hand in must be in your own words, and based on your own understanding of the solution. If someone helps you understand the problem during a high-level discussion, you are not cheating. We strongly encourage students to help one another understand the material presented in class, in the book, and general issues relevant to the assignments. When taking an exam, you must work independently. Any collaboration during an exam will be considered cheating. Any student who is caught cheating will be given an D in the course. Please don't take that chance - if you're having trouble understanding the material, please let us know and we will be more than happy to help.
+
+
+        </div>
+    </div>
+
+    <!--  End Modal -->
+    <div w3-include-html="../../footer.html"></div>
+
+    <!--   Core JS Files   -->
+    <script src="../../assets/js/core/jquery.min.js"></script>
+    <script src="../../assets/js/core/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap-material-design.js"></script>
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+    <script src="../../assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="../../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../../assets/js/plugins/nouislider.min.js"></script>
+    <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script src="../../assets/js/material-kit.js?v=2.0.2"></script>
+    <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
+    <script src="../../assets/assets-for-demo/js/material-kit-demo.js"></script>
+    <!-- including html -->
+    <script src="../../assets/js/include-html.js"></script>        
+    <script>
+        $(document).ready(function() {
+
+            //init DateTimePickers
+            materialKit.initFormExtendedDatetimepickers();
+
+            // Sliders Init
+            //materialKit.initSliders();
+
+            includeHTML();
+        });
+    </script>
+</body>
+
+</html>

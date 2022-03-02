@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+    <!-- <link rel="apple-touch-icon" href="./assets/img/kit/free/apple-icon.png"> -->
+    <link rel="icon" href="../../assets/img/kit/free/gist.ico">
+    <title>
+        GIST Computer Vision Lab
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../assets/css/material-kit.css?v=2.0.2">
+    <!-- Documentation extras -->
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../../assets/assets-for-demo/demo.css" rel="stylesheet" />
+    <style type="text/css">
+    hr { 
+        margin: 0em;
+        border-width: 1px;
+    } 
+    </style>
+    <!-- iframe removal -->
+</head>
+
+<body class="index-page">
+    <nav class="navbar navbar-color-on-scroll navbar-transparent navbar-light fixed-top navbar-expand-lg " color-on-scroll="0" id="sectionsNav">
+        <div w3-include-html="../../header_courses.html" class="container"></div>
+    </nav>
+
+    <div class="page-header2 header-filter clear-filter" data-parallax="true" style="background-image: url('../../assets/img/gist3.jpg'); background-position: top;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main main-raised">
+        <div class="container">
+            <div class="title">
+                <h3 class="title">
+                    Machine Learning and Deep Learning (EC4213 / ET5402 / CT5303)<br>
+                </h3>
+                <h4 class="title" style="margin-top:-8px; margin-bottom: 20px;">
+                    Fall 2019<br>
+                </h4>
+                <h5>
+                    <b>Schedule</b>: Mon/Wed 4:00pm-5:15pm<br>
+                    <b>Location</b>: GIST College A-115 <br>
+                    <b>Web forum</b>: <b><a href="https://piazza.com/gist/fall2019/ec4213et5402et5303/resources" target="_new" style="color: #3971cc;">Piazza</a></b><br>
+                    <br>
+                    <b>Instructor</b>: Jonghyun Choi (jhc@gist)<br>
+                    <b>Office Hour</b>: Wed 2pm-3pm or by appointment in Dasan 509<br>
+                    <br>
+
+                    <b>TAs:</b>:<br>
+                    Dongmin Kang (skydmk21@gist) / 
+                    Office: DASAN 504 / 
+                    Office hour: Tue. 2pm-3pm
+                    <br>
+                    Jinwoo Nam (skaws2003@gist) / 
+                    Office: DASAN 504 / 
+                    Office hour: Thu. 3-4pm
+                    <br>
+                    Dahyun Kim (killawhale@gist) / 
+                    Office: DASAN 504 / 
+                    Office hour: Wed. 3-4pm<br>
+                </h5>
+            </div>
+
+            <h4>
+                <b>Jump to</b>: <a href="#textbook">[Textbook]</a> <a href="#sched">[Schedule]</a> <a href="https://piazza.com/gist/fall2019/ec4213et5402et5303/resources">[Piazza]</a> <a href="https://piazza.com/gist/fall2019/ec4213et5402et5303/resources" target="_blank">[Homework]</a> <a href="#coding">[Coding Assignments]</a> 
+                <!-- <a href="#finalproj">[Final Project]</a>  -->
+                <a href="#policies">[Policies]</a>
+            </h4>
+
+            <h3 class="title"> Introduction </h3>
+            This class will showcase various paradigms and methods in machine learning, its applications and its recent instance of deep neural networks also known as deep learning. The paradigms include supervised learning, unsupervised learning, semi-supervised learning, active learning and etc. The class will help you to understand and apply the machine learning algorithms to various applications such as computer vision and natural language processing.
+
+            <!---------------->
+            <h3 class="title" id="textbook"> Textbooks and references</h3>
+            <ul>
+                <li> <b>(Textbook)</b> (CB) Pattern Recognition and Machine Learning, (Christopher Bishop, 2006) <a href="https://www.microsoft.com/en-us/research/people/cmbishop/#!prml-book">[Link]</a></li>
+                <li> (TM) Machine Learning, (Tom Mitchell, 1997) <a href="http://www.cs.cmu.edu/~tom/mlbook.html" target="_blank">[Link]</a></li> 
+                <li> (GBC) Deep Learning (Ian Goodfellow, Yoshua Bengio, Aaron Courville, 2016) <a href="http://www.deeplearningbook.org/" target="_blank">[Link]</a></li>
+                <li> (DHS) Pattern Classification 2nd Edition, (Richard O Duda, Peter E. Hart, David G. Stork, 2000) 
+                    <a href="https://www.amazon.com/Pattern-Classification-Pt-1-Richard-Duda/dp/0471056693" target="_blank">[Link]</a>
+                    </li>
+                <li> (GT) Mathematics for Machine Learning, (Garrett Thomas, 2018) <a href="http://gwthomas.github.io/docs/math4ml.pdf" target="_blank">[Link]</a> </li>
+                <li> (KM) Machine Learning: a probabilistic perspective, (Kevin Murphy, 2013) <a href="https://www.cs.ubc.ca/~murphyk/MLbook/index.html" target="_blank">[Link]</a> </li>                
+                <li> (SB) Reinforcement Learning, 2nd Edition, (Richard S. Sutton and Andrew G. Barto, 2018) <a href="https://mitpress.mit.edu/books/reinforcement-learning-second-edition" target="_blank">[Link]</a> </li>
+            </ul>
+
+            <h4>
+                <font color="red"><b>[!] All slides (lecture slides, notes, tutorial), homework and solutions are found in Piazza's resource page <a href="https://piazza.com/gist/fall2019/ec4213et5402et5303/resources" target="_blank">[link]</a>.</b></font>
+            </h4>
+
+            <!---------------->
+            <h3 class="title" id="sched"> Schedule </h3>
+            
+                <table border=1 cellpadding=4 bgcolor=#c0e881>
+
+                    <tr bgcolor="#34c18d">
+                        <td style="width: 9%;"><b><font size=+1 color=#FFFFFF>Date</font></b></td>
+                        <td style="width: 35%;"><b><font size=+1 color=#FFFFFF>Topics</font></b></td>
+                        <td align=center style="width: 14%;"><b><font size=+1 color=#FFFFFF>Readings</font></b></td>
+                        <td align=center style="width: 4%;"><b><font size=+1 color=#FFFFFF>Release</font></b></td>
+                        <td align=center style="width: 4%;"><b><font size=+1 color=#FFFFFF>Due</font></b></td>
+                        <td align=center style="width: 1%;"><b><font size=+1 color=#FFFFFF>Tutorial</font></b></td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>02 Sept.</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[1]</font>  -->
+                            <b>Introduction to machine learning</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <!-- Title -->                        
+<!--                     <tr>
+                        <td colspan=5 bgcolor=#c18f33><center><i><font size=+1 color=#FFFFFF><b> Basic Supervised Learing </b></font></i></center></td>
+                    </tr>
+ -->                        
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>04 Sept.</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Introduction to machine learning 2</b>
+                        </td>
+                        <td align=center>TM 3</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>09 Sept.</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Decision trees I</b>
+                        </td>
+                        <td align=center>TM 3</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>11 Sept.</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Decision trees II</b>
+                        </td>
+                        <td align=center>TM 3</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td><s>16 Sept.</s><br><b>18 Sept.</b></td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Decision trees III</b>
+                        </td>
+                        <td align=center>TM 3</td>
+                        <td align=center>-</td>
+                        <td align=center>HW #0</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>23 Sept.</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Geometric view of classification and nearest neighbor.</b>
+                        </td>
+                        <td align=center>CB 2.5.2, 3.1,<br>DHS 2.1-2.7, 2.9<br>3.1-3.2, 4.4-4.5</td>
+                        <td align=center>HW #1</td>
+                        <td align=center>-</td>
+                        <td align=center>CoLab</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td><s>Wed. 25 Sept.</s><br><b>Fri. 27 Sept.</b><br>8pm-9:15pm</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>MLE/MAP</b>
+                        </td>
+                        <td align=center>DHS 2<br>TM  6.1-6.5</td>
+                        <td align=center>CA #1</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>30 Sept.</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>MLE/MAP II</b>
+                        </td>
+                        <td align=center>DHS 2<br>TM  6.1-6.5</td>
+                        <td align=center>Quiz #1</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>02 Oct.</td>
+                        <td>
+                            <b>Linear regression I</b>
+                        </td>
+                        <td align=center>CB 3</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>07 Oct.</td>
+                        <td>
+                            <b>Linear regression II<br>
+                            Bias-Variance Trade-off<br>
+                            Naive Bayes Classifiers</b>
+                        </td>
+                        <td align=center>
+                            CB 3<hr>
+                            CB 1.2.3<hr>
+                            TM 6.9-6.10
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#fcbda4 valign=center>
+                        <td>09 Oct.</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Hangul (Korean Alphabet) Proclamation Day</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td><b>Fri. 11 Oct.</b><br>9:15pm-10:30pm</td>
+                        <td>
+                            <b>Logistic regression</b>
+                        </td>
+                        <td align=center>
+                            TM 6.9-6.10<br>
+                            KM 8.1-8.3, 8.5.2
+                        <td align=center>HW #2<br>Quiz #2</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>14 Oct.</td>
+                        <td>
+                            <b>
+                            Perceptron
+                        </td>
+                        <td align=center>CB 4.1.7, 5, 6 / KM  8.5.4, 14, 16.5 / TM  4.4
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>HW #1</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td><s>16 Oct.</s></td>
+                        <td>
+                            <i><font color=red>Class canceled</font></i>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>21 Oct.</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Perceptron II<br>
+                               Intro to Neural Network, Convolutional Neural Network
+                            </b>
+                        </td>
+                        <td align=center>
+                            CB 4.1.7, 5, 6 / KM  8.5.4, 14, 16.5 / TM  4.4<hr>
+                            CB 5 / TM  4.5-4.9 / DHS 6 / GBC 6, 9
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>CA #1</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td><b>Tue 22 Oct.</b><br>8pm-9:15pm</td>
+                        <td>
+                            <b>Support Vector Machines I</b>
+                        </td>
+                        <td align=center>
+                            CB  7.1 / KM  14.5 / <a href="http://www.cs.northwestern.edu/~pardo/courses/eecs349/readings/support_vector_machines4.pdf" target="_new">An SVM tutorial</a>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>23 Oct.</td>
+                        <td>
+                            <b>Support Vector Machines II</b>
+                        </td>
+                        <td align=center>
+                            CB  7.1 / KM  14.5 / <a href="http://www.cs.northwestern.edu/~pardo/courses/eecs349/readings/support_vector_machines4.pdf" target="_new">An SVM tutorial</a>
+                        </td>
+                        <td align=center>CA #2</td>
+                        <td align=center>HW #2</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#ffeb51 valign=center>
+                        <td>28 Oct.</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>Mid-term Exam.</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#fcbda4 valign=center>
+                        <td>30 Oct.</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>No class for the Mid-term week</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+                    
+                    <tr bgcolor=#FFFFFF valign=center>
+                            <td>04 Nov.</td>
+                            <td>
+                                <b>
+                                Mid-term exam review
+                                </b>
+                            </td>
+                            <td align=center>
+                                -
+                            </td>
+                            <td align=center>-</td>
+                            <td align=center>-</td>
+                            <td align=center>-</td>
+    
+                        </tr>
+    
+                        <tr bgcolor=#FFFFEE valign=center>
+                            <td>06 Nov.</td>
+                            <td>
+                                <b>
+                                Mid-term exam review 2<br>
+                                Support Vector Machines III (Kernel Methods)
+                            </td>
+                            <td align=center>
+                                CB 6 / KM 14
+                            </td>
+                            <td align=center>-</td>
+                            <td align=center>-</td>
+                            <td align=center>-</td>
+                        </tr>
+    
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>11 Nov.</td>
+                        <td>
+                            <b>
+                                Unsupervised learning I<br>
+                            </b>
+                        </td>
+                        <td align=center>
+                            CB 12.1, CB 9.1-9.3
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>13 Nov.</td>
+                        <td>
+                            <b>
+                            Unsupervised learning II                            
+                        </td>
+                        <td align=center>
+                            CB 12.1, CB 9.1-9.3
+                        </td>
+                        <td align=center>Quiz #3</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#fcbda4 valign=center>
+                            <td>18 Nov.</td>
+                            <td>
+                                <b>No class for school's holiday.</b>
+                            </td>
+                            <td align=center>-</td>
+                            <td align=center>-</td>
+                            <td align=center></td>
+                            <td align=center>-</td>
+                        </tr>
+    
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>20 Nov.</td>
+                        <td>
+                            <b>Introduction to boosting and ensemble.</b>
+                        </td>
+                        <td align=center>
+                            CB 14.3
+                        </td>
+                        <td align=center>
+                            CA #3<br>
+                            HW #3                            
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                            <td>25 Nov.</td>
+                            <td>
+                                <b>
+                                Other learning paradigms
+                                <hr>    
+                                Becoming a Machine Learning Engineer and a Researcher
+                                <hr>
+                                Introduction to Deep Learning<br>
+                                <!-- Deep Convolutional Neural Network<br>
+                                <hr>
+                                Layers in deep neural networks</b> -->
+                            </td>
+                            <td align=center>
+                                <a href="http://raetschlab.org/lectures/ssl-tutorial.pdf" target="_new">SSL Tutorial 1</a>,
+                                <a href="http://pages.cs.wisc.edu/~jerryzhu/pub/sslchicago09.pdf" target="_new">2</a><br>
+                                <a href="http://hunch.net/~active_learning/active_learning_icml09.pdf" target="_new">AL Tutorial 2</a>
+                                <hr>    
+                                <a href="https://www.wikihow.com/Become-a-Machine-Learning-Engineer" target="_new">WikiHow</a>
+                                <hr>
+                                GBC 6, KM 28.1, GBC 9
+                            <td align=center>-</td>
+                            <td align=center>CA #2</td>
+                            <td align=center>-</td>
+                        </tr>
+    
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>27 Nov.</td>
+                        <td>
+                            <b>Deep Neural Network architectures</b>
+                        </td>
+                        <td align=center>GBC 7</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>02 Dec.</td>
+                        <td>
+                            <b>Training Deep Neural Networks - Optimization</b>
+                        </td>
+                        <td align=center>GBC 8</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>04 Dec.<br><b>9:00pm</b></td>
+                        <td>
+                            <b>Deep Recurrent Neural Network</b>
+                        </td>
+                        <td align=center>GBC 10</td>
+                        <td align=center>Quiz #4</td>
+                        <td align=center>HW #3</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <!--<tr bgcolor=#FFFFEE valign=center>
+                        <td>04 Dec.</td>
+                        <td>
+                            <b>Deep Recurrent Neural Network II</b>
+                        </td>
+                        <td align=center>GBC 10</td>
+                        <td align=center>Quiz #5</td>
+                        <td align=center>HW #3</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td>06 Dec.</td>
+                        <td>
+                            <b>Introduction to deep reinforcement learning</b>
+                        </td>
+                        <td align=center>TM 13</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr> -->
+
+                    <tr bgcolor=#ffeb51 valign=center>
+                        <td><b>09 Dec.<br>4:00pm-6:45pm</b></td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[3]</font>  -->
+                            <b>Final Exam. (GIST College C-104)</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#fcbda4 valign=center>
+                        <td>11 Dec.</td>
+                        <td>
+                            <!-- <font color="#999999" size="-2">[2]</font>  -->
+                            <b>No class for the final exam week.</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFFF valign=center>
+                        <td><b>17 Dec.<br>9:00pm</b></td>
+                        <td>
+                            <b>Final exam. review.<br>Deep learning applications and beyond</b>
+                        </td>
+                        <td align=center>GBC 12</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                    <tr bgcolor=#FFFFEE valign=center>
+                        <td>18 Dec.</td>
+                        <td>
+                            <b>CA #3 Best methods and discussions</b>
+                        </td>
+                        <td align=center>-</td>
+                        <td align=center>-</td>
+                        <td align=center>CA #3</td>
+                        <td align=center>-</td>
+                    </tr>
+
+                </table>
+
+
+<!--             <h3 class="title" id="homework"> Homework Assignments </h3>
+            <font color="red"><b>If the due date is on the class day, the deadline is before the class starts. Otherwise, specify.</b></font>
+            <ul>
+                <li>HW00:</li>
+            </ul>
+ -->
+
+            <!---------------->
+            <!-- <h3 class="title" id="coding"> Coding Assignments </h3>
+            <ul>
+                <li><b>CA 1</b>: TBA</li>
+                <li><b>CA 2</b>: TBA</li>
+                <li><b>CA 3</b>: TBA</li>
+            </ul> -->
+
+
+            <!---------------
+            <h3 class="title" id="finalproj"> Final Project </h3>
+            <ul>
+                <li></li>
+            </ul>
+            -->
+
+
+            <!---------------->
+            <h3 class="title" id="policies"> Course Policies </h3>
+
+            <b>Cheating</b>: Any assignment or exam that is handed in must be your own work. However, talking with one another to understand the material better is strongly encouraged. Recognizing the distinction between cheating and cooperation is very important. If you copy someone else's solution, you are cheating. If you let someone else copy your solution, you are cheating. If someone dictates a solution to you, you are cheating. Everything you hand in must be in your own words, and based on your own understanding of the solution. If someone helps you understand the problem during a high-level discussion, you are not cheating. We strongly encourage students to help one another understand the material presented in class, in the book, and general issues relevant to the assignments. When taking an exam, you must work independently. Any collaboration during an exam will be considered cheating. Any student who is caught cheating will be given an D in the course. Please don't take that chance - if you're having trouble understanding the material, please let us know and we will be more than happy to help.
+
+        </div>
+    </div>
+
+    <!--  End Modal -->
+    <div w3-include-html="../../footer.html"></div>
+
+    <!--   Core JS Files   -->
+    <script src="../../assets/js/core/jquery.min.js"></script>
+    <script src="../../assets/js/core/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap-material-design.js"></script>
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+    <script src="../../assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="../../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../../assets/js/plugins/nouislider.min.js"></script>
+    <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script src="../../assets/js/material-kit.js?v=2.0.2"></script>
+    <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
+    <script src="../../assets/assets-for-demo/js/material-kit-demo.js"></script>
+    <!-- including html -->
+    <script src="../../assets/js/include-html.js"></script>    
+    <script>
+        $(document).ready(function() {
+
+            //init DateTimePickers
+            materialKit.initFormExtendedDatetimepickers();
+
+            // Sliders Init
+            //materialKit.initSliders();
+
+            includeHTML();
+        });
+    </script>
+</body>
+
+</html>
