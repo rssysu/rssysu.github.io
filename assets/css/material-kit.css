@@ -4601,8 +4601,8 @@ tbody.collapse.show {
 .card {
     position: relative;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
     min-width: 0;
     word-wrap: break-word;
     background-color: #fff;
@@ -14512,7 +14512,7 @@ textarea {
     background-color: transparent !important;
     box-shadow: none;
     padding-top: 25px;
-    color: rgb(255, 255, 255);
+    color: #fff;
 }
 
 .navbar.navbar-transparent .navbar-brand:hover {
@@ -17235,8 +17235,8 @@ footer .pull-center {
     color: #fff;
     margin-bottom: 50px;
     text-align: center;
-    width: 150%;
-    margin-left: -25%;
+    /* width: 150%;
+    margin-left: -25%; */
 }
 
 .index-page .brand h1 {
@@ -17345,7 +17345,7 @@ footer .pull-center {
 
 .profile-page .tab-content .collections .card .card-body {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     /* flex-wrap: nowrap; */
 }
