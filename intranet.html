@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+    <!-- <link rel="apple-touch-icon" href="./assets/img/kit/free/apple-icon.png"> -->
+    <link rel="icon" href="./assets/img/kit/free/yonsei.ico">
+    <title>
+      Yonsei Vision and Learning Lab.
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" target="_blank" href="https://fonts.googleapis.com/css?family=Open+Sans:+400,500,600,700|Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/material-kit.css?v=2.0.2">
+    <!-- Documentation extras -->
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <!-- <link href="./assets/assets-for-demo/demo.css" rel="stylesheet" /> -->
+    <!-- iframe removal -->
+</head>
+
+<body class="index-page">
+    <nav class="navbar navbar-color-on-scroll navbar-transparent navbar-light fixed-top navbar-expand-lg " color-on-scroll="0" id="sectionsNav">
+        <div w3-include-html="header.html" class="container"></div>
+    </nav>
+    
+    <div class="page-header2 header-filter clear-filter" data-parallax="true" style="background-image: url('assets/img/yonsei-eagle.jpeg'); background-position-y: -170px; background-position: top;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main main-raised">
+        <div class="container" style="margin-bottom: 1em;">
+            <div class="title" style="margin-bottom: -1em;">
+              <h3>Lab. Operation - Roles & Responsibility</h3>
+            </div>
+
+              <p style="margin-top: 2em; margin-bottom: 1em; font-size: large;">We run the lab based on the following role assignments.</p> 
+              <p style="font-size: 1em;"><b>Chief Operating Officer</b>: Jonghyun Choi</p>
+              <p style="font-size: 1em;"><b>Chief Financial Officer</b>: Jeongha Lee</p>
+              <p style="font-size: 1em;"><b>Student Operating Representative</b>: Byeonghwi Kim</p>
+              <p style="font-size: 1em;"><b>Associate Student Operating Representative</b>: Daechul Ahn</p>
+              <p style="font-size: 1em;"><b>Event Scheduling and Management</b>: Jinyeon Kim</p>
+              <p style="font-size: 1em;"><b>Reading Group Management</b>: Yura Choi</p>
+              <p style="font-size: 1em;"><b>Stand-up Operation</b>: Cheolhong Min</p>
+              <p style="font-size: 1em;"><b>Undergrad Student Representative</b>: Minhyuk Seo</p>
+
+          </div>
+    </div>
+    <!--  End Modal -->
+    <div w3-include-html="footer.html"></div>
+
+    <!--   Core JS Files   -->
+    <script src="./assets/js/core/jquery.min.js"></script>
+    <script src="./assets/js/core/popper.min.js"></script>
+    <script src="./assets/js/bootstrap-material-design.js"></script>
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+    <script src="./assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="./assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="./assets/js/plugins/nouislider.min.js"></script>
+    <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script src="./assets/js/material-kit.js?v=2.0.2"></script>
+    <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
+    <script src="./assets/assets-for-demo/js/material-kit-demo.js"></script>
+    <!-- including html -->
+    <script src="./assets/js/include-html.js"></script>    
+    <script>
+        $(document).ready(function() {
+
+            //init DateTimePickers
+            materialKit.initFormExtendedDatetimepickers();
+
+            // // Sliders Init
+            // materialKit.initSliders();
+
+            includeHTML();
+        });
+    </script>
+</body>
+
+</html>
