@@ -21,15 +21,14 @@ Research Experience
 **An Adaptive Training Tool for Critical Paper Reading**
 
 - Develop a tutoring tool for critical paper reading, which facilitates critical thoughts with three‑stage training
-
 - Advisor: [Prof.Zhenhui Peng](https://zhenhuipeng.com/)
 - Accepted by UIST 2023 (**CCF‑A**) as the co‑first author
-- Conduct related work research and formative study to identify the design requirements; propose critical
+- **Main Responsibilities:** Conduct related work research and formative study to identify the design requirements; propose critical questions generated model and implement the backend; perform between‑subject user experiments and data analysis
 
 
 **Continual Test-time Adaption for Object Detection**
 
-- Design a algorithm to make object detection model adapt itself to a continually changing environment in test time:
+- Design a algorithm to make object detection model adapt itself to a continually changing environment in test time
 - Advisor: [Pro.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)
 
 Research Interest
