@@ -20,7 +20,7 @@ Research Experience
 
 **An Adaptive Training Tool for Critical Paper Reading**
 
-- Develop a tutoring tool for critical paper reading, which facilitates critical thoughts with three‑stage training
+- Develop a tutoring tool with three‑stage training for critical paper reading
 - Advisor: [Prof.Zhenhui Peng](https://zhenhuipeng.com/)
 - Accepted by UIST 2023 (**CCF‑A**) as the co‑first author
 - **Main Responsibilities:** Conduct related work research and formative study to identify the design requirements; propose critical questions generated model and implement the backend; perform between‑subject user experiments and data analysis
