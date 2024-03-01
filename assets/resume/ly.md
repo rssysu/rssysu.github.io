@@ -10,7 +10,7 @@ Education
 ---------
 
 2020-2024 (expected)
-:   **B.A., Artificial Intelligence; Sun Yat-sen University**
+:   **B.E., Artificial Intelligence; Sun Yat-sen University**
 
     * Current research field: Test-time Adaption for cross-scene image classification
     * Advisor: [Prof.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)

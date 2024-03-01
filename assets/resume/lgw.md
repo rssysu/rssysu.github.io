@@ -11,13 +11,13 @@ Education
 ---------
 
 2023-present 
-:   **M.A., Artificial Intelligence; Sun Yat-sen University**
+:   **M.E., Artificial Intelligence; Sun Yat-sen University**
 
     * Advisor: [Prof.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)
     * Research Field: Domain Adaptation
 
 2019-2023
-:   **B.A., Software Engineering; Jinan University**
+:   **B.E., Software Engineering; Jinan University**
 
     * Advisor: Prof.Xiaoxiang Liu
     * Honorary Title: Excellent Graduate
