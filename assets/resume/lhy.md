@@ -11,12 +11,12 @@ Education
 ---------
 
 2023-2026(expected) 
-:   **MA, Artificial Intelligence; Sun Yat-sen University**
+:   **M.A., Artificial Intelligence; Sun Yat-sen University**
 
     * Advisor: [Prof.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)
 
 2019-2023 
-:   **BSc, Mechanical design, manufacturing and automation; Shang Hai University**
+:   **B.A., Mechanical design, manufacturing and automation; Shang Hai University**
 
     * Thesis title: Research on Adaptive Federated Learning Algorithm for Medical Internet of Things
     * Advisor: Prof.Xianjian Jin

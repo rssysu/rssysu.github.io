@@ -10,7 +10,7 @@ Education
 ---------
 
 2021-2025 (expected)
-:   **BSc, Artificial Intelligence; Sun Yat-sen University**
+:   **B.A., Artificial Intelligence; Sun Yat-sen University**
 
 Research Experience
 ----------
