@@ -24,7 +24,7 @@ Research Experience
 **Active Learning for Domain Adaption in Object Detection**
 
 - Design an Active Learning algorithm that achieves higher performance on cross-domain tasks for object detection  
-- Advisor: [Pro.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)
+- Advisor: [Prof.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)
 
 Research Interest
 --------------------

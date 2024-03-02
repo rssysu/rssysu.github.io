@@ -21,7 +21,7 @@ Research Experience
 **Cross-domain video classification based on active learning**
 
 - Use active learning methods to reduce the cost of data labeling and improve the accuracy of cross-domain video classification
-- Advisor: [Pro.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)
+- Advisor: [Prof.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)
 
 Research Interest
 --------------------

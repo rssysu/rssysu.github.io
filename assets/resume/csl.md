@@ -29,7 +29,7 @@ Research Experience
 **Continual Test-time Adaption for Object Detection**
 
 - Design a algorithm to make object detection model adapt itself to a continually changing environment in test time
-- Advisor: [Pro.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)
+- Advisor: [Prof.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)
 
 Research Interest
 --------------------

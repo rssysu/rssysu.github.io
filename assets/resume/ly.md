@@ -21,7 +21,7 @@ Research Experience
 **Test-time Adaption for cross-scene image classification**
 - Combined with the ideas of Test-time Adaption to design a suitble method for cross-scene image classification.
 
-- Advisor: [Pro.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)
+- Advisor: [Prof.Juepeng Zheng](https://hail-alloy-af4.notion.site/Juepeng-Zheng-d3b70a4b409145139c91e55813cc80fa)
 - Being conducted as current research field
 
 
