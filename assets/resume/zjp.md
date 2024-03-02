@@ -36,12 +36,12 @@ Education
 Courses
 ----------
 
-2023.4
+2023.4-2023.7
 :   **Digital Signal Processing & Experiment of Digital Signal Processing**
 
     - Undergraduate
 
-2023.4
+2023.4-2023.7
 :   **Deep Learning**
 
     - Graduate
